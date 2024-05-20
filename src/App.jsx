@@ -1,34 +1,62 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
+import Header from './layouts/Header'
+import Footer from './layouts/Footer'
+import Users from './pages/Users'
+import Login from './components/Login'
+import { Route, Switch } from 'react-router-dom'
+import Home from './pages/Home'
+import Products from './pages/Products'
+import Categories from './pages/Categories'
+import Orders from './pages/Orders'
+import Contact from './pages/Contact'
+import Profile from './pages/Profile'
+import HeaderTop from './layouts/HeaderTop'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <HeaderTop />
+      
+      <div className='flex flex-row'>
+        <div className='flex basis-1/6'>
+        
+        <Header />
+        
+        </div>
+        <div className='flex basis-5/6 pt-3'>
+        <Switch>
+        <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/users" exact>
+            <Users />
+          </Route>
+          <Route path="/categories" exact>
+            <Categories />
+          </Route>
+          <Route path="/orders" exact>
+            <Orders />
+          </Route>
+          <Route path="/contact" exact>
+            <Contact />
+          </Route>
+          <Route path="/profile" exact>
+            <Profile />
+          </Route>
+          <Route path="/products" exact>
+            <Products />
+          </Route>
+        </Switch>
+        </div>
+        </div>
+        <Footer />
+    </div>
   )
 }
 
