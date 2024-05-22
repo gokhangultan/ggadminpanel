@@ -14,6 +14,9 @@ import Contact from './pages/Contact'
 import Profile from './pages/Profile'
 import HeaderTop from './layouts/HeaderTop'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 function App() {
@@ -21,6 +24,7 @@ function App() {
 
   return (
     <div>
+       <ToastContainer position="top-right" autoClose={5000} />
       <HeaderTop />
       
       <div className='flex flex-row'>

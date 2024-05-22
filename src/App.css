@@ -9,3 +9,7 @@
 .pageTitle{
   @apply text-xl font-bold text-[#203682] flex flex-row text-center justify-center;
 }
+
+.form-input {
+  @apply p-2 rounded border-2 border-[#E6E6E6] text-xl bg-white pl-4 pr-[20px] sm:pr-[100px];
+}
