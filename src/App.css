@@ -5,3 +5,7 @@
 .primaryColor{
   @apply bg-gray-400;
 }
+
+.pageTitle{
+  @apply text-xl font-bold text-[#203682] flex flex-row text-center justify-center;
+}
